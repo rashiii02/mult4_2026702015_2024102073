@@ -31,7 +31,7 @@ module tb_mult;
                b = j;
                @(posedge clk);
                @(posedge clk);
-               #1;
+               #4;
                if (p !== i * j) begin
                   errors = errors + 1;
                   $display("MISMATCH: a=%0d b=%0d p=%0d expected=%0d" , i, j, p, i*j);
