@@ -1,3 +1,5 @@
 sim
 *.vcd
 runs/
+gls
+gls0
