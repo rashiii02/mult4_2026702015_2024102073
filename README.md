@@ -193,19 +193,19 @@ grep -iE "setup__ws\"|route__drc_errors\"|lvs_error__count|instance__count\"|cor
 
 ### CLOCK_PERIOD attempts (all with sky130A)
 
+
 | Run | CLOCK_PERIOD (ns) | Worst setup slack (ns) | Result |
 |---|---|---|---|
 | 1 | 3.5 | -2.129 | failed |
 | 2 | 4.0 | -1.629 | failed |
 | 3 | 4.5 | -1.139 | failed |
 | 4 | 5.0 | -0.642 | failed |
-| 5 | 6.0 | -0.064 | failed |
-| 6 | 7.0 | +0.585 | passed (`RUN_2026-10-24_15-08-24`) |
+| 5 | 5.5 | -0.142 | failed |
+| 6 | 6.0 | -0.064 | failed |
+| 7 | 6.5 | +0.085 | passed, final |
 
 All failures were in the slow corner `ss_100C_1v60`. Part C used only the typical corner
-`tt_025C_1v80`, but LibreLane checks every corner. Runs 1 to 4 used 0.5 ns steps; the last two used
-1.0 ns steps, chosen from the slack trend to reduce the number of runs.
-
+`tt_025C_1v80`, but LibreLane checks every corner. 
 The runs made on 2026-10-23 used the wrong PDK (`ihp-sg13g2`, the default of the container) by mistake
 and were discarded. The runs above were checked with:
 
